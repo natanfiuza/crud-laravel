@@ -15,8 +15,8 @@ class UserController extends Controller
     }
     public function create()
     {
-
-        return view('usuarios.index');
+        $typeusers = TypeUser::all();
+        return view('usuarios.index',compact('typeusers'));
     }
 
     public function store(Request $request)

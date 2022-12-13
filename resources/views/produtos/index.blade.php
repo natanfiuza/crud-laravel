@@ -19,7 +19,7 @@
         <div class="card card-gray mb-0 shadow-sm">
             <div class="card-header">
                 <h3 class="card-title">
-                    <x-bi-file-text-fill class="mr-2 h1" style="width: 24px; height: 24px" />Formulário de Cadastro
+                    <i class="fas fa-file-alt mr-2 "></i>Formulário de Cadastro
                 </h3>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputNomeProduto">
-                         <i class="fas fa-edit"></i>Nome da Produto
+                        <i class="fas fa-edit"></i>Nome da Produto
                     </label>
                     <input type="text" class="form-control  {{ $errors->has('name') ? 'is-invalid' : '' }}"
                         id="inputNomeProduto" placeholder="Nome da Produto" name="name" value="{{ old('name') }}">
@@ -55,37 +55,33 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                   <label for="inputCategoria">
-                   <i class="fas fa-tags"></i> Categoria
-                </label>
+                    <label for="inputCategoria">
+                        <i class="fas fa-tags"></i> Categoria
+                    </label>
 
-                                                        <select class="form-select select2 select2-danger"
-                                                            data-dropdown-css-class="select2-danger" id="categoria_id"
-                                                            name="categoria_id" style="width: 100%;">
-                                                            <option selected="selected" disabled>Selecione uma categoria...
-                                                            </option>
-                                                            @foreach ($categorias as $categoria)
-                                                            <option value="{{$categoria->id}}"
-                                                                {{ old('em') == $categoria->id ? 'selected' : ''}}>
-                                                                {{$categoria->name}}</option>
-                                                            @endforeach
-                                                        </select>
+                    <select class="form-select form-control select2 select2-danger" data-dropdown-css-class="select2-danger"
+                        id="categoria_id" name="categoria_id" style="width: 100%;">
+                        <option selected="selected" disabled>Selecione uma categoria...
+                        </option>
+                        @foreach ($categorias as $categoria)
+                            <option value="{{ $categoria->id }}" {{ old('em') == $categoria->id ? 'selected' : '' }}>
+                                {{ $categoria->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputMarca">
-                   <i class="fas fa-copyright"></i> Marca
-                </label>
-                        <select class="form-select select2 select2-danger"
-                                                            data-dropdown-css-class="select2-danger" id="marca_id"
-                                                            name="marca_id" style="width: 100%;">
-                                                            <option selected="selected" disabled>Selecione uma marca...
-                                                            </option>
-                                                            @foreach ($marcas as $marca)
-                                                            <option value="{{$marca->id}}"
-                                                                {{ old('em') == $marca->id ? 'selected' : ''}}>
-                                                                {{$marca->name}}</option>
-                                                            @endforeach
-                                                        </select>
+                        <i class="fas fa-copyright"></i> Marca
+                    </label>
+                    <select class="form-select form-control select2 select2-danger" data-dropdown-css-class="select2-danger"
+                        id="marca_id" name="marca_id" style="width: 100%;">
+                        <option selected="selected" disabled>Selecione uma marca...
+                        </option>
+                        @foreach ($marcas as $marca)
+                            <option value="{{ $marca->id }}" {{ old('em') == $marca->id ? 'selected' : '' }}>
+                                {{ $marca->name }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="form-row">
@@ -98,7 +94,7 @@
                     {{ $errors->first('marca_id') }}
                 </div>
             </div>
-            
+
             <button type="submit" class="btn btn-secondary btn-md">Cadastrar</button>
     </div>
     </form>

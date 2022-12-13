@@ -18,7 +18,7 @@
         <div class="card-header">
             <h1 class="card-title text-bold text-lg">Usuários</h1>
             <div class="card-tools">
-                <a href={{ route('produtos.create')}} class="btn btn-success col fileinput-button dz-clickable">
+                <a href={{ route('usuarios.create')}} class="btn btn-success col fileinput-button dz-clickable">
                     <i class="fas fa-plus"></i>
                     <span>Novo</span>
                 </a>
@@ -64,7 +64,7 @@
                             </td>
 
                             <td class="project-actions">
-                                    <a class="btn btn-secondary btn-sm" href="{{ route('produtos.edit', $user->id) }}">
+                                    <a class="btn btn-secondary btn-sm" href="{{ route('usuarios.edit', $user->id) }}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Edit
