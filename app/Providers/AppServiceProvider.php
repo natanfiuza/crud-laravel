@@ -39,28 +39,28 @@ class AppServiceProvider extends ServiceProvider
         });
         $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
 
-            $event->menu->add([
+            !Auth::user()->is_admin()?$event->menu->add([
                 'header' => 'Cadastros',
-            ] );
-            $event->menu->add([
+            ] ):null;
+            !Auth::user()->is_admin() ? $event->menu->add([
                 'text'        => 'Categoria',
                 'url'         => 'categorias/list',
                 'icon'        => 'fas fa-tags',
             ] );
-            $event->menu->add([
+            !Auth::user()->is_admin() ? $event->menu->add([
 
                     'text'        => 'Marcas',
-                    'url'         => 'marcas/',
+                    'url'         => 'marcas/list',
                     'icon'        => 'far fa-fw fa-copyright',
 
-            ] );
-            $event->menu->add([
+            ] ):null;
+            !Auth::user()->is_admin() ? $event->menu->add([
 
                     'text'        => 'Produtos',
                     'url'         => 'produtos/list',
                     'icon'        => 'fas fa-fw fa-cube',
 
-            ] );
+            ] ):null;
         });
     }
 }
