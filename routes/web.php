@@ -60,3 +60,14 @@ Route::controller(App\Http\Controllers\MarcaController::class)
     Route::get('/edit/{id}', 'edit')->name('edit');
     Route::put('/edit/{id}', 'update')->name('update');
 });
+// Marcas
+Route::controller(App\Http\Controllers\UserController::class)
+->prefix('usuarios')
+->name('usuarios.')
+->group(function () {
+    Route::get('/list', 'index')->name('list');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/register', 'store')->name('store');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::put('/edit/{id}', 'update')->name('update');
+});

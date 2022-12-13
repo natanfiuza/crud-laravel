@@ -45,7 +45,7 @@
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputEmail">
+                <label for="inputCategoria">
                    <i class="fas fa-tags"></i> Categoria
                 </label>
 
@@ -62,7 +62,7 @@
                                                         </select>
             </div>
             <div class="form-group col-md-6">
-                <label for="inputCNPJ">
+                <label for="inputMarca">
                    <i class="fas fa-copyright"></i> Marca
                 </label>
                         <select class="form-select select2 select2-danger"
