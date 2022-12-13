@@ -20,6 +20,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'typeuser_id',
         'password',
     ];
 
@@ -45,5 +46,9 @@ class User extends Authenticatable
     public function is_admin()
     {
         return $this->typeuser_id === 1;
+    }
+    public function typeuser()
+    {
+        return $this->belongsTo(TypeUser::class, 'typeuser_id');
     }
 }
