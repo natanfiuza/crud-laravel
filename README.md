@@ -26,3 +26,20 @@ Requisitos
     Usar banco de dados Mysql;
     Usar o github ou bitbucket;
     No demais fique a vontade para utilizar todos os seus conhecimentos e técnicas possíveis.
+## Instalação
+
+Após instalar o laravel deve rodar:
+
+```bash
+php artisan db:seed
+```
+Os usuario para acesso são:
+
+```
+admin@natanfiuza.dev.br 
+Senha: abc123
+
+comum@natanfiuza.dev.br 
+Senha: abc123
+
+```

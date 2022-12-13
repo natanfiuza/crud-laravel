@@ -314,13 +314,13 @@ return [
 
         [
             'text' => 'Usuário',
-            'url'  => 'admin/users',
+            'url'  => 'usuarios/list',
             'icon' => 'fas fa-fw fa-user',
             "can" => 'permissao-admin'
         ],
         [
             'text' => 'Usuário Tipo',
-            'url'  => 'admin/typeusers',
+            'url'  => 'typeusers/list',
             'icon' => 'fas fa-fw fa-user-tag',
             "can" => 'permissao-admin'
         ],

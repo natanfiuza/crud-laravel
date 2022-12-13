@@ -4,11 +4,11 @@
 
 @section('content_header')
     <div class="d-flex row justify-content-between">
-        <h1 class="m-0 text-dark mb-4">Cadastrar Produto</h1>
+        <h1 class="m-0 text-dark mb-4">Cadastrar Usuário</h1>
 
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('produtos.list') }}">Cadastro</a></li>
-            <li class="breadcrumb-item active">Produtos</li>
+            <li class="breadcrumb-item active">Usuários</li>
         </ol>
     </div>
 @stop
@@ -30,14 +30,14 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputNomeProduto">
-                         <i class="fas fa-edit"></i>Nome da Produto
+                        <x-bi-folder-fill class="mr-2" />Nome
                     </label>
                     <input type="text" class="form-control  {{ $errors->has('name') ? 'is-invalid' : '' }}"
                         id="inputNomeProduto" placeholder="Nome da Produto" name="name" value="{{ old('name') }}">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputEmail">
-                        <i class="fas fa-dollar-sign"></i> Preço
+                        <x-bi-envelope-fill class="mr-2" />Preço
                     </label>
                     <input type="email" class="form-control  {{ $errors->has('email') ? 'is-invalid' : '' }}"
                         id="inputEmail" placeholder="email@gmail.com" name="email" value="{{ old('email') }}">
@@ -55,50 +55,39 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                   <label for="inputCategoria">
-                   <i class="fas fa-tags"></i> Categoria
-                </label>
-
-                                                        <select class="form-select select2 select2-danger"
-                                                            data-dropdown-css-class="select2-danger" id="categoria_id"
-                                                            name="categoria_id" style="width: 100%;">
-                                                            <option selected="selected" disabled>Selecione uma categoria...
-                                                            </option>
-                                                            @foreach ($categorias as $categoria)
-                                                            <option value="{{$categoria->id}}"
-                                                                {{ old('em') == $categoria->id ? 'selected' : ''}}>
-                                                                {{$categoria->name}}</option>
-                                                            @endforeach
-                                                        </select>
+                    <label for="inputCNPJ">
+                        <x-bi-file-person-fill class="mr-2" />CNPJ
+                    </label>
+                    <input type="text" class="form-control cnpj {{ $errors->has('CNPJ') ? 'is-invalid' : '' }}"
+                        id="inputCNPJ" placeholder="00.000.000-0000/00" name="CNPJ" value="{{ old('CNPJ') }}">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputMarca">
-                   <i class="fas fa-copyright"></i> Marca
-                </label>
-                        <select class="form-select select2 select2-danger"
-                                                            data-dropdown-css-class="select2-danger" id="marca_id"
-                                                            name="marca_id" style="width: 100%;">
-                                                            <option selected="selected" disabled>Selecione uma marca...
-                                                            </option>
-                                                            @foreach ($marcas as $marca)
-                                                            <option value="{{$marca->id}}"
-                                                                {{ old('em') == $marca->id ? 'selected' : ''}}>
-                                                                {{$marca->name}}</option>
-                                                            @endforeach
-                                                        </select>
+                    <label for="inputTelefone">
+                        <x-bi-telephone-fill class="mr-2" />Telefone
+                    </label>
+                    <input type="text" class="form-control phone {{ $errors->has('telefone') ? 'is-invalid' : '' }}"
+                        id="telefone" placeholder="(00) 00000-0000" name="telefone" value="{{ old('telefone') }}" />
                 </div>
             </div>
             <div class="form-row">
                 <div class="text-danger form-group col-md-6">
-                    {{ $errors->first('categoria_id') }}
+                    {{ $errors->first('CNPJ') }}
                 </div>
             </div>
             <div class="form-row">
                 <div class="text-danger form-group col-md-6">
-                    {{ $errors->first('marca_id') }}
+                    {{ $errors->first('telefone') }}
                 </div>
             </div>
-            
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputObs">
+                        <x-bi-chat-left-text-fill class="mr-2" />Observação
+                    </label>
+                    <textarea type="textarea" class="form-control" id="inputObs" placeholder="Observação" name="observacao">
+                    </textarea>
+                </div>
+            </div>
             <button type="submit" class="btn btn-secondary btn-md">Cadastrar</button>
     </div>
     </form>
