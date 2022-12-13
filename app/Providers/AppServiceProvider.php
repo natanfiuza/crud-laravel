@@ -46,7 +46,7 @@ class AppServiceProvider extends ServiceProvider
                 'text'        => 'Categoria',
                 'url'         => 'categorias/list',
                 'icon'        => 'fas fa-tags',
-            ] );
+            ] ):null;
             !Auth::user()->is_admin() ? $event->menu->add([
 
                     'text'        => 'Marcas',
