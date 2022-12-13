@@ -2,7 +2,7 @@
 
 ## Aplicação CRUD em Laravel
 
-Criar uma aplicação utilizando Laravel, MySql e quaisquer outras tecnologias que julgar benéficas ao projeto. 
+Criar uma aplicação utilizando Laravel, MySql 
 
 A aplicação deve prover um sistema de Login e nível de acesso simples. 
 
@@ -12,8 +12,6 @@ O administrador do sistema deverá Manter permissões e Manter usuários, cada u
 * Manter categorias;
 * Manter marcas.
 
->> Não necessita desenvolver os CRUDs referentes às tarefas acima. Crie apenas uma tela para cada uma das tarefas contendo apenas o título a fim de testarmos se o usuário pode acessa-las ou não;
-
 O administrador não tem acesso às tarefas relacionadas a manter produtos, categorias e marcas;
 Apenas os CRUDs de usuário e permissões são necessários.
 
@@ -21,11 +19,7 @@ Sobre os usuários
     Administrador;
     Comum
 
-Requisitos
-    Usar Laravel (Última versão estável);
-    Usar banco de dados Mysql;
-    Usar o github ou bitbucket;
-    No demais fique a vontade para utilizar todos os seus conhecimentos e técnicas possíveis.
+
 ## Instalação
 
 Após instalar o laravel deve rodar:
