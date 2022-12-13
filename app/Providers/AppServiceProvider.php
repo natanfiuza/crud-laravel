@@ -57,7 +57,7 @@ class AppServiceProvider extends ServiceProvider
             $event->menu->add([
 
                     'text'        => 'Produtos',
-                    'url'         => 'produtos/',
+                    'url'         => 'produtos/list',
                     'icon'        => 'fas fa-fw fa-cube',
 
             ] );
