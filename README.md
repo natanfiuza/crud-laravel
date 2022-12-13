@@ -2,7 +2,7 @@
 
 ## Aplicação CRUD em Laravel
 
-Criem uma aplicação utilizando Laravel, MySql e quaisquer outras tecnologias que julgar benéficas ao projeto. 
+Criar uma aplicação utilizando Laravel, MySql e quaisquer outras tecnologias que julgar benéficas ao projeto. 
 
 A aplicação deve prover um sistema de Login e nível de acesso simples. 
 
