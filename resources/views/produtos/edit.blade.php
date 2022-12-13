@@ -29,7 +29,7 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputNomeProduto">
-                    <x-bi-folder-fill class="mr-2" />Nome
+                   <i class="fas fa-edit"></i> Nome
                 </label>
                 <input type="text" class="form-control  {{ $errors->has('name') ? 'is-invalid' : '' }}"
                     id="inputNomeProduto" placeholder="Nome" name="name">
@@ -37,7 +37,7 @@
 
             <div class="form-group col-md-6">
                 <label for="inputPrice">
-                    <x-bi-person-fill class="mr-2" />Preço
+                   <i class="fas fa-dollar-sign"></i> Preço
                 </label>
                 <input type="text" class="form-control  {{ $errors->has('price') ? 'is-invalid' : '' }}"
                     id="inputPrice" placeholder="Preço do produto" name="price">
@@ -46,7 +46,7 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail">
-                    <x-bi-envelope-fill class="mr-2" />Categoria
+                   <i class="fas fa-tags"></i> Categoria
                 </label>
 
                                                         <select class="form-select select2 select2-danger"
@@ -63,7 +63,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="inputCNPJ">
-                    <x-bi-file-person-fill class="mr-2" />CNPJ
+                   <i class="fas fa-copyright"></i> Marca
                 </label>
                         <select class="form-select select2 select2-danger"
                                                             data-dropdown-css-class="select2-danger" id="marca_id"

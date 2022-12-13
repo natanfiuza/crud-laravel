@@ -20,11 +20,9 @@ class MarcaSeeder extends Seeder
         DB::table('marcas')->truncate();
         Schema::enableForeignKeyConstraints();
         \App\Models\Marca::insert([
-            [
-                "id" => 1, "name" => 'Multilaser',
-                "id" => 2, "name" => 'McAfee',
-                "id" => 3, "name" => 'Microsoft',
-            ],
+            ["id" => 1, "name" => 'Multilaser',],
+            ["id" => 2, "name" => 'McAfee',],
+            ["id" => 3, "name" => 'Microsoft',],
         ]);
     }
 }

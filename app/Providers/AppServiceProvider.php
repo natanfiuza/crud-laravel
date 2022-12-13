@@ -44,7 +44,7 @@ class AppServiceProvider extends ServiceProvider
             ] );
             $event->menu->add([
                 'text'        => 'Categoria',
-                'url'         => 'categorias/',
+                'url'         => 'categorias/list',
                 'icon'        => 'fas fa-tags',
             ] );
             $event->menu->add([

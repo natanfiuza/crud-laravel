@@ -20,11 +20,9 @@ class CategoriaSeeder extends Seeder
         DB::table('categorias')->truncate();
         Schema::enableForeignKeyConstraints();
         \App\Models\Categoria::insert([
-            [
-                "id" => 1, "name" => 'Eletrônicos',
-                "id" => 2, "name" => 'Software',
-                "id" => 3, "name" => 'Acessórios',
-            ],
+            ["id" => 1, "name" => 'Eletrônicos',],
+            ["id" => 2, "name" => 'Software',],
+            ["id" => 3, "name" => 'Acessórios',],
         ]);
     }
 }
