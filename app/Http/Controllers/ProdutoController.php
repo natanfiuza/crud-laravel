@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Marca;
 use App\Models\Produto;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
 class ProdutoController extends Controller
@@ -34,17 +36,19 @@ class ProdutoController extends Controller
         $produto->categoria_id = $request->categoria_id;
 
         $produto->save();
-        toastr()->success('Cadastrado com sucesso!');
 
-        return redirect()->route('produtos.show')->with('success', 'Produto criado corretamente');
+
+        return redirect()->route('produtos.list')->with('success', 'Produto criado corretamente');
     }
 
 
     public function edit($id)
     {
         $produto = Produto::findOrFail($id);
+        $categorias = Categoria::all();
+        $marcas = Marca::all();
 
-        return view('produtos.edit', compact('produto'));
+        return view('produtos.edit', compact('produto','categorias','marcas') );
     }
 
     public function update(Request $request, $id)
@@ -57,9 +61,9 @@ class ProdutoController extends Controller
 
         $produto->save();
 
-        toastr()->success('Editado com sucesso!');
+
 
         return redirect()->route('produtos.list')
-        ->with('success', 'Produto cadastrado com sucesso!');
+        ->with('success', 'Produto alterado com sucesso!');
     }
 }
