@@ -19,7 +19,7 @@
         <div class="card card-gray mb-0 shadow-sm">
             <div class="card-header">
                 <h3 class="card-title">
-                    <x-bi-file-text-fill class="mr-2 h1" style="width: 24px; height: 24px" />Formulário de Cadastro
+                   <i class="fas fa-file-alt mr-2 "></i>Formulário de Cadastro
                 </h3>
             </div>
         </div>
@@ -30,14 +30,14 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputNomeProduto">
-                        <x-bi-folder-fill class="mr-2" />Nome
+                         <i class="fas fa-edit"></i> Nome
                     </label>
                     <input type="text" class="form-control  {{ $errors->has('name') ? 'is-invalid' : '' }}"
                         id="inputNomeProduto" placeholder="Nome da Produto" name="name" value="{{ old('name') }}">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputEmail">
-                        <x-bi-envelope-fill class="mr-2" />Preço
+                        <i class="far fa-envelope"></i> E-mail
                     </label>
                     <input type="email" class="form-control  {{ $errors->has('email') ? 'is-invalid' : '' }}"
                         id="inputEmail" placeholder="email@gmail.com" name="email" value="{{ old('email') }}">
@@ -55,39 +55,37 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputCNPJ">
-                        <x-bi-file-person-fill class="mr-2" />CNPJ
-                    </label>
-                    <input type="text" class="form-control cnpj {{ $errors->has('CNPJ') ? 'is-invalid' : '' }}"
-                        id="inputCNPJ" placeholder="00.000.000-0000/00" name="CNPJ" value="{{ old('CNPJ') }}">
+                    <label for="inputEmail">
+                   <i class="fas fa-fw fa-user-tag"></i> Tipo de usuário
+                </label>
+
+                                                        <select class="form-select form-control select2 select2-danger"
+                                                            data-dropdown-css-class="select2-danger" id="typeuser_id"
+                                                            name="typeuser_id" style="width: 100%;">
+                                                            <option selected="selected" disabled>Selecione um tipo de usuário...
+                                                            </option>
+                                                            @foreach ($typeusers as $typeuser)
+                                                            <option value="{{$typeuser->id}}"
+                                                                {{ old('em') == $typeuser->id ? 'selected' : ''}}>
+                                                                {{$typeuser->name}}</option>
+                                                            @endforeach
+                                                        </select>
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputTelefone">
-                        <x-bi-telephone-fill class="mr-2" />Telefone
-                    </label>
-                    <input type="text" class="form-control phone {{ $errors->has('telefone') ? 'is-invalid' : '' }}"
-                        id="telefone" placeholder="(00) 00000-0000" name="telefone" value="{{ old('telefone') }}" />
+
                 </div>
             </div>
             <div class="form-row">
                 <div class="text-danger form-group col-md-6">
-                    {{ $errors->first('CNPJ') }}
+                    {{ $errors->first('typeuser_id') }}
                 </div>
             </div>
             <div class="form-row">
                 <div class="text-danger form-group col-md-6">
-                    {{ $errors->first('telefone') }}
+
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-12">
-                    <label for="inputObs">
-                        <x-bi-chat-left-text-fill class="mr-2" />Observação
-                    </label>
-                    <textarea type="textarea" class="form-control" id="inputObs" placeholder="Observação" name="observacao">
-                    </textarea>
-                </div>
-            </div>
+
             <button type="submit" class="btn btn-secondary btn-md">Cadastrar</button>
     </div>
     </form>

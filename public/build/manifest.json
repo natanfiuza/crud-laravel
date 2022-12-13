@@ -1,0 +1,26 @@
+{
+  "resources/js/app.js": {
+    "file": "assets/app.d1eb6931.js",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "_axios.f0af0e34.js"
+    ]
+  },
+  "resources/js/bootstrap.js": {
+    "file": "assets/bootstrap.929a6576.js",
+    "src": "resources/js/bootstrap.js",
+    "isEntry": true,
+    "imports": [
+      "_axios.f0af0e34.js"
+    ]
+  },
+  "_axios.f0af0e34.js": {
+    "file": "assets/axios.f0af0e34.js"
+  },
+  "resources/sass/app.scss": {
+    "file": "assets/app.67dcdfd2.css",
+    "src": "resources/sass/app.scss",
+    "isEntry": true
+  }
+}

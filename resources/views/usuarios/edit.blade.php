@@ -46,10 +46,10 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail">
-                   <i class="fas fa-tags"></i> Categoria
+                   <i class="fas fa-fw fa-user-tag"></i> Tipo de usuario
                 </label>
 
-                                                        <select class="form-select select2 select2-danger"
+                                                        <select class="form-select form-control select2 select2-danger"
                                                             data-dropdown-css-class="select2-danger" id="typeuser_id"
                                                             name="typeuser_id" style="width: 100%;">
                                                             <option selected="selected" disabled>Selecione um tipo de usuário...
@@ -62,7 +62,7 @@
                                                         </select>
             </div>
             <div class="form-group col-md-6">
-               
+
             </div>
         </div>
 
