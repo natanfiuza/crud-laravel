@@ -65,12 +65,13 @@
                             </td>
 
                             <td class="project-actions">
-                                <a class="btn btn-primary btn-sm" title="Editar registro" href="{{ route('usuarios.edit', $user->id) }}">
+                                <a class="btn btn-primary btn-sm" title="Editar registro"
+                                    href="{{ route('usuarios.edit', $user->id) }}">
                                     <i class="fas fa-pencil-alt" style="height: 12px;">
                                     </i>
                                 </a>
-                                <x-adminlte-button label="" title="Privilégios de acesso" icon="fas fa-fingerprint" data-user_id="{{$user->id}}"
-                                    class="btn bg-teal btn-sm btn_privilegios" />
+                                <x-adminlte-button label="" title="Privilégios de acesso" icon="fas fa-fingerprint"
+                                    data-user_id="{{ $user->id }}" class="btn bg-teal btn-sm btn_privilegios" />
                             </td>
                         </tr>
                     @endforeach
@@ -80,16 +81,16 @@
     </div>
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery-mask/jquery.mask.min.js') }}"></script>
-    <script>
-
-    </script>
+    <script></script>
 @stop
 {{-- Custom --}}
-<x-adminlte-modal id="modalPrivilegios" title="Privilégios de acesso" size="lg" theme="teal" icon="fas fa-fingerprint"
-    v-centered static-backdrop scrollable>
-    <div id="body_modalPrivilegios" style="height:300px;">
+<x-adminlte-modal id="modalPrivilegios" title="Privilégios de acesso" size="lg" theme="teal"
+    icon="fas fa-fingerprint" v-centered static-backdrop scrollable>
+    <div style="height:300px;">
+       <p class="mb-7"> Selecione os privilégios que o usuário tem acesso:</p>
+        <div id="body_modalPrivilegios" >
 
-
+        </div>
     </div>
     <x-slot name="footerSlot">
         <x-adminlte-button class="mr-auto" theme="success" label="Definir" />
