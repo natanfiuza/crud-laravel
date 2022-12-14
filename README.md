@@ -37,3 +37,7 @@ comum@natanfiuza.dev.br
 Senha: abc123
 
 ```
+### Preview
+
+Utilize o endereço:
+[http://www.natanfiuza.dev.br/crud-laravel/public/](http://www.natanfiuza.dev.br/crud-laravel/public/)
