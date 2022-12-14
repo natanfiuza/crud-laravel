@@ -1,6 +1,6 @@
 $('.btn_privilegios').on('click',(v,e) => {
 
-console.log("clicou target", $(v.currentTarget).attr("data-user_id"));
+getUserPrivileges($(v.currentTarget).attr("data-user_id"));
 
 });
 
@@ -18,8 +18,12 @@ const getUserPrivileges = async (user_id) => {
         success: function (res) {
             let concat = '';
             res.data.map((r) => {
-                concat += `<div>
-                <input type="checkbox" class="privileges_${r.id} form-control" value="${r.id}">
+                concat += `<div class="ml-5 flex">
+                <div class="custom-control custom-switch">
+<input type="checkbox" ${r.checked?'checked':''} class="custom-control-input privileges_${r.id}"  value="${r.id}" id="switch_${r.id}">
+<label class="custom-control-label" for="switch_${r.id}">${r.privilegio.name}</label>
+</div>
+
                 </div>`;
             });
             $("#body_modalPrivilegios").html(concat);

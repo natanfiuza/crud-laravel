@@ -64,10 +64,10 @@ class PrivilegioController extends Controller
     }
     public function get_user_privileges(Request $request)
     {
-
+        $privilegios = Privilegio::all();
         $data = [];
-        foreach (PrivilegioUser::where('user_id', $request->user_id)->get() as $privilegio_user) {
-            $data[] = ['id' => $privilegio_user->privilegio_id, 'privilegio' => Privilegio::findOrFail($privilegio_user->privilegio_id)];
+        foreach ($privilegios as $privilegio_user) {
+            $data[] = ['id' => $privilegio_user->id, 'privilegio' => Privilegio::findOrFail($privilegio_user->id),'checked' => PrivilegioUser::where('privilegio_id', $privilegio_user->id)->where('user_id', $request->user_id)->exists() ];
         }
 
         return response()->json(['data' => $data, 'qtdItens' => count($data)]);

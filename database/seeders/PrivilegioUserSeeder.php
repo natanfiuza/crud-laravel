@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class PrivilegioSeeder extends Seeder
+class PrivilegioUserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,12 +17,14 @@ class PrivilegioSeeder extends Seeder
     public function run()
     {
         Schema::disableForeignKeyConstraints();
-        DB::table('privilegios')->truncate();
+        DB::table('privilegio_users')->truncate();
         Schema::enableForeignKeyConstraints();
-        \App\Models\Privilegio::insert([
-            ["id" => 1, "name" => 'Cadastro de Categorias',],
-            ["id" => 2, "name" => 'Cadastro de Marcas',],
-            ["id" => 3, "name" => 'Cadastro de Produtos',],
+        \App\Models\PrivilegioUser::insert([
+            [ "user_id" => 2, "privilegio_id" => 1],
+            [ "user_id" => 2, "privilegio_id" => 2],
+            [ "user_id" => 2, "privilegio_id" => 3],
+            [ "user_id" => 1, "privilegio_id" => 1],
+            [ "user_id" => 1, "privilegio_id" => 2],
         ]);
     }
 }
