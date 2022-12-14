@@ -9,13 +9,13 @@ class MarcaController extends Controller
 {
     public function index()
     {
-        $categorias = Marca::all();
-        return view('categorias.show', compact('categorias'));
+        $marcas = Marca::all();
+        return view('marcas.show', compact('marcas'));
     }
     public function create()
     {
 
-        return view('categorias.index');
+        return view('marcas.index');
     }
 
     public function store(Request $request)
@@ -31,31 +31,31 @@ class MarcaController extends Controller
 
 
         $categoria->save();
-        //toastr()->success('Cadastrado com sucesso!');
 
-        return redirect()->route('categorias.list')->with('success', 'Categoria criada corretamente');
+
+        return redirect()->route('marcas.list')->with('success', 'Marca criada corretamente');
     }
 
 
     public function edit($id)
     {
-        $categoria = Marca::findOrFail($id);
+        $marca = Marca::findOrFail($id);
 
 
 
-        return view('categorias.edit', compact('categoria'));
+        return view('marcas.edit', compact('marca'));
     }
 
     public function update(Request $request, $id)
     {
-        $categoria = Marca::findOrFail($id);
-        $categoria->name = $request->name;
+        $marca = Marca::findOrFail($id);
+        $marca->name = $request->name;
 
-        $categoria->save();
+        $marca->save();
 
         ///  toastr()->success('Editado com sucesso!');
 
-        return redirect()->route('categorias.list')
-            ->with('success', 'Categoria alterada com sucesso!');
+        return redirect()->route('marcas.list')
+            ->with('success', 'Marca alterada com sucesso!');
     }
 }

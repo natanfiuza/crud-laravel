@@ -45,7 +45,15 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-secondary btn-md">Cadastrar</button>
+               <div class="form-row">
+
+                    <button type="submit" class="btn btn-secondary btn-md">Cadastrar</button>
+
+
+                    <a class="ml-3" href="{{ route('categorias.list') }}"><button type="button"
+                            class="btn btn-danger btn-md ">Voltar</button></a>
+
+            </div>
     </div>
     </form>
     </div>

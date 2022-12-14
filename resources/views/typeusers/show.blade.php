@@ -4,11 +4,11 @@
 
 @section('content_header')
     <div class="d-flex row justify-content-between">
-        <h1 class="m-0 text-dark mb-4">Lista de marcas</h1>
+        <h1 class="m-0 text-dark mb-4">Lista de Tipo de usuários</h1>
 
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-            <li class="breadcrumb-item active">Marca</li>
+            <li class="breadcrumb-item active">Tipo de Usuário</li>
         </ol>
     </div>
 @stop
@@ -16,9 +16,9 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <h1 class="card-title text-bold text-lg">Marcas</h1>
+            <h1 class="card-title text-bold text-lg">Tipo Usuários</h1>
             <div class="card-tools">
-                <a href={{ route('marcas.create')}} class="btn btn-success col fileinput-button dz-clickable">
+                <a href={{ route('typeusers.create')}} class="btn btn-success col fileinput-button dz-clickable">
                     <i class="fas fa-plus"></i>
                     <span>Novo</span>
                 </a>
@@ -41,18 +41,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($marcas as $marca)
+                    @foreach ($typeusers as $typeuser)
                         <tr>
                             <td>
-                                {{ $marca->id }}
+                                {{ $typeuser->id }}
                             </td>
                             <td>
-                                {{ $marca->name }}
+                                {{ $typeuser->name }}
 
                             </td>
 
                             <td class="project-actions">
-                                    <a class="btn btn-secondary btn-sm" href="{{ route('marcas.edit', $marca->id) }}">
+                                    <a class="btn btn-secondary btn-sm" href="{{ route('typeusers.edit', $typeuser->id) }}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Edit

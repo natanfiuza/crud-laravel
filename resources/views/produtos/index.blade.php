@@ -36,11 +36,11 @@
                         id="inputNomeProduto" placeholder="Nome da Produto" name="name" value="{{ old('name') }}">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="inputEmail">
+                    <label for="inputPrice">
                         <i class="fas fa-dollar-sign"></i> Preço
                     </label>
-                    <input type="email" class="form-control  {{ $errors->has('email') ? 'is-invalid' : '' }}"
-                        id="inputEmail" placeholder="email@gmail.com" name="email" value="{{ old('email') }}">
+                    <input type="currency" class="form-control  {{ $errors->has('price') ? 'is-invalid' : '' }}"
+                        id="inputPrice" placeholder="0,00" name="email" value="{{ old('price') }}">
                 </div>
             </div>
             <div class="form-row">
@@ -95,7 +95,15 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-secondary btn-md">Cadastrar</button>
+            <div class="form-row">
+
+                <button type="submit" class="btn btn-secondary btn-md">Cadastrar</button>
+
+
+                <a class="ml-3" href="{{ route('produtos.list') }}"><button type="button"
+                        class="btn btn-danger btn-md ">Voltar</button></a>
+
+            </div>
     </div>
     </form>
     </div>

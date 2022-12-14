@@ -4,11 +4,11 @@
 
 @section('content_header')
     <div class="d-flex row justify-content-between">
-        <h1 class="m-0 text-dark mb-4">Editar Marca</h1>
+        <h1 class="m-0 text-dark mb-4">Editar Privilégio</h1>
 
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Cadastro</a></li>
-            <li class="breadcrumb-item active">Marca</li>
+            <li class="breadcrumb-item active">Privilégio</li>
         </ol>
     </div>
 @stop
@@ -18,11 +18,11 @@
         <div class="card-header">
             <h3 class="card-title">
                 <i class="fas fa-pencil-alt mr-2"></i>
-                Editar Marca
+                Editar Privilégio
             </h3>
         </div>
     </div>
-    <form action={{ route('marcas.edit', $marca->id) }} method="POST" enctype="multipart/form-data"
+    <form action={{ route('privilegios.edit', $privilegio->id) }} method="POST" enctype="multipart/form-data"
         class="form-fluid p-4 rounded shadow bg-white">
         @csrf
         @method('PUT')
@@ -32,7 +32,7 @@
                    <i class="fas fa-edit"></i> Nome
                 </label>
                 <input type="text" class="form-control  {{ $errors->has('name') ? 'is-invalid' : '' }}"
-                    id="inputNome" placeholder="Nome" name="name" value="{{$marca->name}}">
+                    id="inputNome" placeholder="Nome" name="name" value="{{$privilegio->name}}">
             </div>
 
             <div class="form-group col-md-6">
@@ -50,7 +50,7 @@
 
             <div class="form-row">
                 <button type="submit" class="btn btn-secondary mt-2">Salvar</button>
-                <a class="ml-3" href="{{ route('marcas.list')}}"><button type="button" class="btn btn-danger mt-2 ">Voltar</button></a>
+                <a class="ml-3" href="{{ route('privilegios.list')}}"><button type="button" class="btn btn-danger mt-2 ">Voltar</button></a>
             </div>
 
 

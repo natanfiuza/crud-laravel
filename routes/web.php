@@ -71,3 +71,25 @@ Route::controller(App\Http\Controllers\UserController::class)
     Route::get('/edit/{id}', 'edit')->name('edit');
     Route::put('/edit/{id}', 'update')->name('update');
 });
+// Tipo de usuarios
+Route::controller(App\Http\Controllers\TypeUserController::class)
+->prefix('typeusers')
+->name('typeusers.')
+->group(function () {
+    Route::get('/list', 'index')->name('list');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/register', 'store')->name('store');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::put('/edit/{id}', 'update')->name('update');
+});
+// Privilegios
+Route::controller(App\Http\Controllers\PrivilegioController::class)
+->prefix('privilegios')
+->name('privilegios.')
+->group(function () {
+    Route::get('/list', 'index')->name('list');
+    Route::get('/create', 'create')->name('create');
+    Route::post('/register', 'store')->name('store');
+    Route::get('/edit/{id}', 'edit')->name('edit');
+    Route::put('/edit/{id}', 'update')->name('update');
+});

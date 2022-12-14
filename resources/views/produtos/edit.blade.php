@@ -39,8 +39,8 @@
                 <label for="inputPrice">
                    <i class="fas fa-dollar-sign"></i> Preço
                 </label>
-                <input type="text" class="form-control  {{ $errors->has('price') ? 'is-invalid' : '' }}"
-                    id="inputPrice" placeholder="Preço do produto" name="price">
+                <input type="text" class="form-control  {{ $errors->has('price') ? 'is-invalid' : '' }} price"
+                    id="inputPrice" placeholder="Preço do produto" name="price" value="{{$produto->price}}">
             </div>
         </div>
         <div class="form-row">
@@ -90,8 +90,8 @@
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery-mask/jquery.mask.min.js') }}"></script>
     <script>
-        $(".cnpj").mask('00.000.000/0000-00')
-        $('.phone').mask('(00) 00000-0000');
+
+        $('.price').mask('000,00');
     </script>
 
 @stop
