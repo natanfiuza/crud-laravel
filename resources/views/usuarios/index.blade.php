@@ -120,7 +120,7 @@
     <script src="{{ asset('vendor/jquery-mask/jquery.mask.min.js') }}"></script>
     <script>
         $(".cnpj").mask('00.000.000/0000-00')
-        $('.phone').mask('(00) 00000-0000');
+
     </script>
 
 @stop

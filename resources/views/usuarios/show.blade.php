@@ -18,7 +18,7 @@
         <div class="card-header">
             <h1 class="card-title text-bold text-lg">Usuários</h1>
             <div class="card-tools">
-                <a href={{ route('usuarios.create')}} class="btn btn-success col fileinput-button dz-clickable">
+                <a href={{ route('usuarios.create') }} class="btn btn-success col fileinput-button dz-clickable">
                     <i class="fas fa-plus"></i>
                     <span>Novo</span>
                 </a>
@@ -64,12 +64,13 @@
                             </td>
 
                             <td class="project-actions">
-                                    <a class="btn btn-secondary btn-sm" href="{{ route('usuarios.edit', $user->id) }}">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Edit
-                                    </a>
-                                    <x-adminlte-button label="Privilegio" icon="fas fa-fingerprint"  data-toggle="modal" data-target="#modalCustom" class="bg-teal btn-sm btn_privilegios"/>
+                                <a class="btn btn-secondary btn-sm" href="{{ route('usuarios.edit', $user->id) }}">
+                                    <i class="fas fa-pencil-alt">
+                                    </i>
+                                    Edit
+                                </a>
+                                <x-adminlte-button label="Privilegio" icon="fas fa-fingerprint" data-user_id="{{$user->id}}" data-toggle="modal"
+                                    data-target="#modalCustom" class="bg-teal btn-sm btn_privilegios" />
                             </td>
                         </tr>
                     @endforeach
@@ -77,14 +78,21 @@
             </table>
         </div>
     </div>
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/jquery-mask/jquery.mask.min.js') }}"></script>
+    <script>
+
+    </script>
 @stop
 {{-- Custom --}}
-<x-adminlte-modal id="modalCustom" title="Privilégios de acesso" size="lg" theme="teal"
-    icon="fas fa-fingerprint" v-centered static-backdrop scrollable>
-    <div style="height:300px;">Read the account policies...</div>
+<x-adminlte-modal id="modalCustom" title="Privilégios de acesso" size="lg" theme="teal" icon="fas fa-fingerprint"
+    v-centered static-backdrop scrollable>
+    <div style="height:300px;">
+
+
+    </div>
     <x-slot name="footerSlot">
-        <x-adminlte-button class="mr-auto" theme="success" label="Definir"/>
-        <x-adminlte-button theme="danger" label="Cancelar" data-dismiss="modal"/>
+        <x-adminlte-button class="mr-auto" theme="success" label="Definir" />
+        <x-adminlte-button theme="danger" label="Cancelar" data-dismiss="modal" />
     </x-slot>
 </x-adminlte-modal>
-
