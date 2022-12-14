@@ -31,7 +31,7 @@ class PrivilegioController extends Controller
 
         ], $mensagens);
 
-        $user = new User();
+        $user = new Privilegio();
         $user->name = $request->name;
 
         $user->save();
