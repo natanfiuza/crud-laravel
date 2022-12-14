@@ -11,6 +11,7 @@
             <li class="breadcrumb-item active">Usuários</li>
         </ol>
     </div>
+
     @vite('resources/js/usuarios/show.js')
 @stop
 
@@ -79,10 +80,11 @@
             </table>
         </div>
     </div>
+
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery-mask/jquery.mask.min.js') }}"></script>
     <script src="{{ asset('vendor/toastr/toastr.min.js') }}"></script>
-    <script></script>
+
 @stop
 {{-- Custom --}}
 <x-adminlte-modal id="modalPrivilegios" title="Privilégios de acesso" size="lg" theme="teal"

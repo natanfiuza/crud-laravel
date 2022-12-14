@@ -3,7 +3,7 @@ $('.btn_privilegios').on('click',(v,e) => {
 getUserPrivileges($(v.currentTarget).attr("data-user_id"));
 
 });
-$(".btn-definir-privilegios").on("click", (v, e) => {
+$("#btn-definir-privilegios").on("click", (v, e) => {
     setUserPrivileges($(v.currentTarget).attr("data-user_id"));
 });
 
@@ -41,7 +41,7 @@ const getUserPrivileges = async (user_id) => {
 const setUserPrivileges = async (user_id) => {
     let list_privileges = [];
     $('.privileges_check').each((e,i) => {
-        list_privileges.push($(i).value);
+        $(i).is(":checked")?list_privileges.push( $(i).val()):null;
     } );
     await $.ajax({
         type: "POST",
