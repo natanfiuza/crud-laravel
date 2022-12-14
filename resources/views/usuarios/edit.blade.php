@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', config('adminlte.title')." - Editar Produto")
+@section('title', config('adminlte.title')." - Editar Usuários")
 
 @section('content_header')
     <div class="d-flex row justify-content-between">
@@ -28,11 +28,28 @@
         @method('PUT')
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputNomeProduto">
+                <label for="inputNome">
                    <i class="fas fa-edit"></i> Nome
                 </label>
                 <input type="text" class="form-control  {{ $errors->has('name') ? 'is-invalid' : '' }}"
-                    id="inputNomeProduto" placeholder="Nome" name="name">
+                    id="inputNome" placeholder="Nome" name="name">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="inputEmail">
+                   <i class="far fa-envelope"></i> E-mail
+                </label>
+                <input type="text" class="form-control  {{ $errors->has('email') ? 'is-invalid' : '' }}"
+                    id="inputEmail" placeholder="E-mail" name="email">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputNome">
+                   <i class="fas fa-edit"></i> Nome
+                </label>
+                <input type="text" class="form-control  {{ $errors->has('name') ? 'is-invalid' : '' }}"
+                    id="inputNome" placeholder="Nome" name="name">
             </div>
 
             <div class="form-group col-md-6">
