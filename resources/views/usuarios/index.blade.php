@@ -7,7 +7,7 @@
         <h1 class="m-0 text-dark mb-4">Cadastrar Usuário</h1>
 
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('produtos.list') }}">Cadastro</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('usuarios.list') }}">Cadastro</a></li>
             <li class="breadcrumb-item active">Usuários</li>
         </ol>
     </div>
@@ -23,17 +23,17 @@
                 </h3>
             </div>
         </div>
-        <form action={{ route('produtos.store') }} method="POST" class="form-fluid p-4 rounded shadow"
+        <form action={{ route('usuarios.store') }} method="POST" class="form-fluid p-4 rounded shadow"
             style="background: white;">
             @csrf
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputNomeProduto">
+                    <label for="inputNome">
                          <i class="fas fa-edit"></i> Nome
                     </label>
                     <input type="text" class="form-control  {{ $errors->has('name') ? 'is-invalid' : '' }}"
-                        id="inputNomeProduto" placeholder="Nome da Produto" name="name" value="{{ old('name') }}">
+                        id="inputNome" placeholder="Nome " name="name" value="{{ old('name') }}">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputEmail">
@@ -51,6 +51,32 @@
             <div class="form-row">
                 <div class="text-danger form-group col-md-6">
                     {{ $errors->first('email') }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputPassword">
+                         <i class="fas fa-fingerprint"></i> Senha
+                    </label>
+                    <input type="password" class="form-control  {{ $errors->has('password') ? 'is-invalid' : '' }}"
+                        id="inputPassword"  name="password" >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail">
+                        <i class="fas fa-fingerprint"></i> Confirma
+                    </label>
+                    <input type="password" class="form-control  {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
+                        id="inputEmail"  name="password_confirmation" >
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="text-danger form-group col-md-6">
+                    {{ $errors->first('password') }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="text-danger form-group col-md-6">
+                    {{ $errors->first('password_confirmation') }}
                 </div>
             </div>
             <div class="form-row">
