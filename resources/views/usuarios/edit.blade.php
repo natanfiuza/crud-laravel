@@ -43,23 +43,32 @@
                     id="inputEmail" placeholder="E-mail" name="email">
             </div>
         </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputNome">
-                   <i class="fas fa-edit"></i> Nome
-                </label>
-                <input type="text" class="form-control  {{ $errors->has('name') ? 'is-invalid' : '' }}"
-                    id="inputNome" placeholder="Nome" name="name">
+       <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputPassword">
+                         <i class="fas fa-fingerprint"></i> Senha
+                    </label>
+                    <input type="password" class="form-control  {{ $errors->has('password') ? 'is-invalid' : '' }}"
+                        id="inputPassword"  name="password" >
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail">
+                        <i class="fas fa-fingerprint"></i> Confirma
+                    </label>
+                    <input type="password" class="form-control  {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
+                        id="inputEmail"  name="password_confirmation" >
+                </div>
             </div>
-
-            <div class="form-group col-md-6">
-                <label for="inputEmail">
-                   <i class="far fa-envelope"></i> E-mail
-                </label>
-                <input type="text" class="form-control  {{ $errors->has('email') ? 'is-invalid' : '' }}"
-                    id="inputEmail" placeholder="E-mail" name="email">
+            <div class="form-row">
+                <div class="text-danger form-group col-md-6">
+                    {{ $errors->first('password') }}
+                </div>
             </div>
-        </div>
+            <div class="form-row">
+                <div class="text-danger form-group col-md-6">
+                    {{ $errors->first('password_confirmation') }}
+                </div>
+            </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="inputEmail">
