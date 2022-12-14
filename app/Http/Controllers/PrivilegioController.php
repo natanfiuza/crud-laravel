@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Privilegio;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
@@ -64,10 +65,12 @@ class PrivilegioController extends Controller
     }
     public function get_user_privileges(Request $request)
     {
+        $user = User::where('uuid', $request->user_id)->firstOrFail();
+        $user_id = $user->id;
         $privilegios = Privilegio::all();
         $data = [];
         foreach ($privilegios as $privilegio_user) {
-            $data[] = ['id' => $privilegio_user->id, 'privilegio' => Privilegio::findOrFail($privilegio_user->id),'checked' => PrivilegioUser::where('privilegio_id', $privilegio_user->id)->where('user_id', $request->user_id)->exists() ];
+            $data[] = ['id' => $privilegio_user->id, 'privilegio' => Privilegio::findOrFail($privilegio_user->id),'checked' => PrivilegioUser::where('privilegio_id', $privilegio_user->id)->where('user_id', $user_id)->exists() ];
         }
 
         return response()->json(['data' => $data, 'qtdItens' => count($data)]);
