@@ -11,6 +11,7 @@
             <li class="breadcrumb-item active">Usuários</li>
         </ol>
     </div>
+    @vite('resources/js/usuarios/show.js')
 @stop
 
 @section('content')
@@ -64,13 +65,12 @@
                             </td>
 
                             <td class="project-actions">
-                                <a class="btn btn-secondary btn-sm" href="{{ route('usuarios.edit', $user->id) }}">
-                                    <i class="fas fa-pencil-alt">
+                                <a class="btn btn-primary btn-sm" title="Editar registro" href="{{ route('usuarios.edit', $user->id) }}">
+                                    <i class="fas fa-pencil-alt" style="height: 12px;">
                                     </i>
-                                    Edit
                                 </a>
-                                <x-adminlte-button label="Privilegio" icon="fas fa-fingerprint" data-user_id="{{$user->id}}" data-toggle="modal"
-                                    data-target="#modalCustom" class="bg-teal btn-sm btn_privilegios" />
+                                <x-adminlte-button label="" title="Privilégios de acesso" icon="fas fa-fingerprint" data-user_id="{{$user->id}}"
+                                    class="btn bg-teal btn-sm btn_privilegios" />
                             </td>
                         </tr>
                     @endforeach
@@ -85,9 +85,9 @@
     </script>
 @stop
 {{-- Custom --}}
-<x-adminlte-modal id="modalCustom" title="Privilégios de acesso" size="lg" theme="teal" icon="fas fa-fingerprint"
+<x-adminlte-modal id="modalPrivilegios" title="Privilégios de acesso" size="lg" theme="teal" icon="fas fa-fingerprint"
     v-centered static-backdrop scrollable>
-    <div style="height:300px;">
+    <div id="body_modalPrivilegios" style="height:300px;">
 
 
     </div>

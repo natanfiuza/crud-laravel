@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Privilegio;
+use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
+use App\Models\PrivilegioUser;
+use Illuminate\Support\Facades\Auth;
 
 class PrivilegioController extends Controller
 {
@@ -58,5 +61,15 @@ class PrivilegioController extends Controller
 
         return redirect()->route('privilegios.list')
             ->with('success', 'Privilégio alterado com sucesso!');
+    }
+    public function get_user_privileges(Request $request)
+    {
+
+        $data = [];
+        foreach (PrivilegioUser::where('user_id', $request->user_id)->get() as $privilegio_user) {
+            $data[] = ['id' => $privilegio_user->privilegio_id, 'privilegio' => Privilegio::findOrFail($privilegio_user->privilegio_id)];
+        }
+
+        return response()->json(['data' => $data, 'qtdItens' => count($data)]);
     }
 }
