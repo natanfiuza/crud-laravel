@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/userprivileges', [PrivilegioController::class, 'get_user_privileges']);
+Route::post('/defineprivileges', [PrivilegioController::class, 'set_user_privileges']);

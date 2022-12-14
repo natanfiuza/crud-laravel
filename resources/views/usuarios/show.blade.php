@@ -81,6 +81,7 @@
     </div>
     <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('vendor/jquery-mask/jquery.mask.min.js') }}"></script>
+    <script src="{{ asset('vendor/toastr/toastr.min.js') }}"></script>
     <script></script>
 @stop
 {{-- Custom --}}
@@ -93,7 +94,7 @@
         </div>
     </div>
     <x-slot name="footerSlot">
-        <x-adminlte-button class="mr-auto" theme="success" label="Definir" />
+        <x-adminlte-button class="mr-auto" theme="success" id="btn-definir-privilegios" data-user_id="" label="Definir" />
         <x-adminlte-button theme="danger" label="Cancelar" data-dismiss="modal" />
     </x-slot>
 </x-adminlte-modal>

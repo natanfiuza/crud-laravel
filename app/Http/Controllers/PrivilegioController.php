@@ -75,4 +75,19 @@ class PrivilegioController extends Controller
 
         return response()->json(['data' => $data, 'qtdItens' => count($data)]);
     }
+    public function set_user_privileges(Request $request)
+    {
+        $user = User::where('uuid', $request->user_id)->firstOrFail();
+        $user_id = $user->id;
+        $privilegios = $request->privileges;
+        PrivilegioUser::where('user_id',$user_id)->delete();
+        foreach($privilegios as $privilegio_id) {
+            $privilegiouser= new PrivilegioUser();
+            $privilegiouser->user_id = $user_id;
+            $privilegiouser->privilegio_id = $privilegio_id;
+            $privilegiouser->save();
+        }
+
+        return response()->json(['ok' => true, 'messages' => 'set user privileges']);
+    }
 }
