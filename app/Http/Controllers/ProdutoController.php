@@ -17,8 +17,9 @@ class ProdutoController extends Controller
     }
     public function create()
     {
-
-        return view('produtos.index');
+        $categorias = Categoria::all();
+        $marcas = Marca::all();
+        return view('produtos.index',compact('categorias','marcas'));
     }
 
     public function store(Request $request)

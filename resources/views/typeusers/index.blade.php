@@ -4,11 +4,11 @@
 
 @section('content_header')
     <div class="d-flex row justify-content-between">
-        <h1 class="m-0 text-dark mb-4">Cadastrar Marcas</h1>
+        <h1 class="m-0 text-dark mb-4">Cadastrar Tipo de Usuário</h1>
 
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('marcas.list') }}">Cadastro</a></li>
-            <li class="breadcrumb-item active">Marcas</li>
+            <li class="breadcrumb-item active">Tipo de Usuários</li>
         </ol>
     </div>
 @stop
@@ -23,7 +23,7 @@
                 </h3>
             </div>
         </div>
-        <form action={{ route('marcas.store') }} method="POST" class="form-fluid p-4 rounded shadow"
+        <form action={{ route('typeusers.store') }} method="POST" class="form-fluid p-4 rounded shadow"
             style="background: white;">
             @csrf
 
@@ -44,14 +44,13 @@
                     {{ $errors->first('name') }}
                 </div>
             </div>
-
             <div class="form-row">
 
-                <button type="submit" class="btn btn-secondary btn-md">Cadastrar</button>
+                    <button type="submit" class="btn btn-secondary btn-md">Cadastrar</button>
 
 
-                <a class="ml-3" href="{{ route('marcas.list') }}"><button type="button"
-                        class="btn btn-danger btn-md ">Voltar</button></a>
+                    <a class="ml-3" href="{{ route('typeusers.list') }}"><button type="button"
+                            class="btn btn-danger btn-md ">Voltar</button></a>
 
             </div>
     </div>

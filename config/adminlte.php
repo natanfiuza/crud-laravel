@@ -330,7 +330,7 @@ return [
         ],
         [
             'text' => 'Privilégio',
-            'url'  => 'admin/privilegios',
+            'url'  => 'privilegios/list',
             'icon' => 'fas fa-fw fa-unlock-alt',
             "can" => 'permissao-admin'
         ],
