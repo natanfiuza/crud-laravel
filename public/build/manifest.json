@@ -15,6 +15,11 @@
       "_axios.f0af0e34.js"
     ]
   },
+  "resources/js/usuarios/show.js": {
+    "file": "assets/show.6476f916.js",
+    "src": "resources/js/usuarios/show.js",
+    "isEntry": true
+  },
   "_axios.f0af0e34.js": {
     "file": "assets/axios.f0af0e34.js"
   },
