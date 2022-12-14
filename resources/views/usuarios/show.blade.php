@@ -71,7 +71,7 @@
                                     </i>
                                 </a>
                                 <x-adminlte-button label="" title="Privilégios de acesso" icon="fas fa-fingerprint"
-                                    data-user_id="{{ $user->id }}" class="btn bg-teal btn-sm btn_privilegios" />
+                                    data-user_id="{{ $user->uuid }}" class="btn bg-teal btn-sm btn_privilegios" />
                             </td>
                         </tr>
                     @endforeach

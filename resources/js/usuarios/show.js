@@ -30,7 +30,7 @@ const getUserPrivileges = async (user_id) => {
             $("#modalPrivilegios").modal("show");
         },
         error: function (e) {
-            console.error(e);
+            console.error('getUserPrivileges:',e);
         },
     });
 };

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Ramsey\Uuid\Uuid;
 use Illuminate\Database\Seeder;
 
 class CreateUsersSeeder extends Seeder
@@ -20,7 +21,8 @@ class CreateUsersSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'admin@natanfiuza.dev.br',
             'password' => bcrypt('abc123'),
-            'typeuser_id' => 1
+            'typeuser_id' => 1,
+            'uuid' => Uuid::uuid4(),
         ]);
         $user_comum = User::updateOrCreate([
             'email' => 'comum@natanfiuza.dev.br'
@@ -28,7 +30,8 @@ class CreateUsersSeeder extends Seeder
             'name' => 'Comum',
             'email' => 'comum@natanfiuza.dev.br',
             'password' => bcrypt('abc123'),
-            'typeuser_id' => 2
+            'typeuser_id' => 2,
+            'uuid' => Uuid::uuid4(),
         ]);
     }
 }
