@@ -1,7 +1,5 @@
 $('.btn_privilegios').on('click',(v,e) => {
-
-getUserPrivileges($(v.currentTarget).attr("data-user_id"));
-
+    getUserPrivileges($(v.currentTarget).attr("data-user_id"));
 });
 $("#btn-definir-privilegios").on("click", (v, e) => {
     setUserPrivileges($(v.currentTarget).attr("data-user_id"));
@@ -9,6 +7,7 @@ $("#btn-definir-privilegios").on("click", (v, e) => {
 
 
 const getUserPrivileges = async (user_id) => {
+
     await $.ajax({
         type: "GET",
         url: "/api/userprivileges",
@@ -17,17 +16,14 @@ const getUserPrivileges = async (user_id) => {
         },
         dataType: "json",
 
-        beforeSend: function () {},
+        beforeSend: function () {
+            $("#btn-definir-privilegios").html('Definir');
+            $("#btn-definir-privilegios").attr("disabled", false);
+        },
         success: function (res) {
             let concat = '';
             res.data.map((r) => {
-                concat += `<div class="ml-5 flex">
-                <div class="custom-control custom-switch">
-<input type="checkbox" ${r.checked?'checked':''} class="custom-control-input privileges_check privileges_${r.id}"  value="${r.id}" id="switch_${r.id}">
-<label class="custom-control-label" for="switch_${r.id}">${r.privilegio.name}</label>
-</div>
-
-                </div>`;
+                concat += `<div class="ml-5 flex"><div class="custom-control custom-switch"><input type="checkbox" ${r.checked?'checked':''} class="custom-control-input privileges_check privileges_${r.id}"  value="${r.id}" id="switch_${r.id}"><label class="custom-control-label" for="switch_${r.id}">${r.privilegio.name}</label></div></div>`;
             });
             $("#body_modalPrivilegios").html(concat);
             $("#btn-definir-privilegios").attr('data-user_id',user_id);
@@ -37,12 +33,17 @@ const getUserPrivileges = async (user_id) => {
             console.error('getUserPrivileges:',e);
         },
     });
+
 };
+
+
 const setUserPrivileges = async (user_id) => {
+
     let list_privileges = [];
     $('.privileges_check').each((e,i) => {
         $(i).is(":checked")?list_privileges.push( $(i).val()):null;
     } );
+
     await $.ajax({
         type: "POST",
         url: "/api/defineprivileges",
@@ -52,7 +53,10 @@ const setUserPrivileges = async (user_id) => {
         },
         dataType: "json",
 
-        beforeSend: function () {},
+        beforeSend: function () {
+             $("#btn-definir-privilegios").html('Aguarde...');
+             $("#btn-definir-privilegios").attr("disabled", true);
+        },
         success: function (res) {
             let concat = "";
             if (res.ok == true) {
